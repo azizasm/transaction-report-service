@@ -36,7 +36,7 @@ public class QueryResolver implements GraphQLQueryResolver {
      * To set pagination to PageRequest
      * @param skip
      * @param first
-     * @return
+     * @return Pageable createPageRequest
      */
     private Pageable createPageRequest(Number skip, Number first) {
         return new PageRequest(skip.intValue(), first.intValue());
@@ -44,16 +44,12 @@ public class QueryResolver implements GraphQLQueryResolver {
 
     /**
      * Getter for Transactions
-     * @return
+     * @return List<Transaction>
      */
     public List<Transaction> getTransactions() {
         return transactionRepository.findAll();
     }
 
-    /**
-     *
-     * @return
-     */
     public List<Remark> getRemarks() {
         return remarkRepository.findAll();
     }
@@ -72,7 +68,7 @@ public class QueryResolver implements GraphQLQueryResolver {
      * Offset based pagination pattern
      * @param skip
      * @param first
-     * @return
+     * @return Page<Account>
      */
     public Page<Account> allLinks(Number skip, Number first) {
         Pageable pageRequest = createPageRequest(skip,first);
@@ -82,7 +78,7 @@ public class QueryResolver implements GraphQLQueryResolver {
     /**
      * transaction getter
      * @param id
-     * @return
+     * @return  Transaction getTransaction
      */
     public Transaction getTransaction(Long id) {
         return transactionRepository.findOne(id);

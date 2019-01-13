@@ -37,7 +37,7 @@ public class MutationResolver implements GraphQLMutationResolver {
     /**
      * Mutation resolcver for createTransaction
      * @param input
-     * @return
+     * @return Transaction
      */
     @Transactional
     public Transaction createTransaction(CreateTransactionInput input) {
@@ -47,7 +47,7 @@ public class MutationResolver implements GraphQLMutationResolver {
     /**
      * Mutation resolcver for Update Transaction
      * @param input
-     * @return
+     * @return Transaction
      */
     @Transactional
     public Transaction updateTransaction(UpdateTransactionInput input) {
@@ -62,7 +62,7 @@ public class MutationResolver implements GraphQLMutationResolver {
     /**
      * Mutation resolcver for DeleteTransaction
      * @param id
-     * @return
+     * @return status
      */
     @Transactional
     public int deleteTransaction(Long id) {
@@ -72,7 +72,7 @@ public class MutationResolver implements GraphQLMutationResolver {
     /**
      *  Mutation resolcver for Account
      * @param input
-     * @return
+     * @return Account
      */
     @Transactional
     public Account createAccount(CreateAccountInput input) {
@@ -82,7 +82,7 @@ public class MutationResolver implements GraphQLMutationResolver {
     /**
      * Mutation resolcver for Account
      * @param input
-     * @return
+     * @return Account
      */
     @Transactional
     public Account updateAccount(UpdateAccountInput input) {
@@ -96,7 +96,7 @@ public class MutationResolver implements GraphQLMutationResolver {
     /**
      * Mutation resolcver for Account
      * @param id
-     * @return
+     * @return status
      */
     @Transactional
     public int deleteAccount(Long id) {
@@ -106,7 +106,7 @@ public class MutationResolver implements GraphQLMutationResolver {
     /**
      * Mutation resolcver for Remark
      * @param input
-     * @return
+     * @return  Remark
      */
     @Transactional
     public Remark createRemark(CreateRemarkInput input) {
@@ -116,7 +116,7 @@ public class MutationResolver implements GraphQLMutationResolver {
     /**
      * Mutation resolcver for Remark
      * @param id
-     * @return
+     * @return status
      */
     @Transactional
     public int deleteRemark(Long id) {

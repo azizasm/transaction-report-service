@@ -22,7 +22,7 @@ public class GraphQLErrorHandler implements graphql.servlet.GraphQLErrorHandler 
     /**
      *  default processErrors
      * @param list
-     * @return
+     * @return  List<GraphQLError>
      */
     @Override
     public List<GraphQLError> processErrors(List<GraphQLError> list) {
@@ -32,7 +32,7 @@ public class GraphQLErrorHandler implements graphql.servlet.GraphQLErrorHandler 
     /**
      * Nested Error
      * @param error
-     * @return
+     * @return GraphQLError
      */
     private GraphQLError getNested(GraphQLError error) {
         if (error instanceof ExceptionWhileDataFetching) {

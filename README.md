@@ -2,9 +2,9 @@
 
 # Sample App - Transaction Report Inquiry Services
 
-Implementation uisng Spring framework  includes following features :
+Implementation using Spring framework  includes following features :
 
-1. HTTP Basic Autentication
+1. HTTP Basic Authentication
 1. Pagination -Offset based pagination pattern
 1. JSON response based on client side field request GraphQL
 

@@ -5,7 +5,7 @@
 ## Class Diagram
 
 ###### Data Model
-![](model.svg?raw=true)
+![](model.svg)
 
 
 ###### Repository and Utility

@@ -30,27 +30,41 @@ public class InitialDataLoader implements CommandLineRunner {
     /**
      * Intit loader with sample data
      * <p>
-     *    To load account, trannsaction and remark entity
+     * To load account, trannsaction and remark entity
      * </p>
+     *
      * @param strings
      */
     @Override
     @Transactional
     public void run(String... strings) {
-        Account accnt1 =  accountRepository.save(new Account(null, "564838406011", "WADIAH CURRENT AC"));
+
+        /**
+         * Load dummy account
+         */
+        Account accnt1 = accountRepository.save(new Account(null, "564838406011", "WADIAH CURRENT AC"));
         Account accnt2 = accountRepository.save(new Account(null, "311140415000", "M2U SAVERS"));
 
-        for (int i = 1; i <= 20 ; i++) {
-            String padded = String.format("%03d" , i);
-            Account user001 = accountRepository.save(new Account(null, "311140415" +  padded , "M2U SAVERS" ));
+        /**
+         * Load bulk dummy account
+         */
+        for (int i = 1; i <= 20; i++) {
+            String padded = String.format("%03d", i);
+            Account user001 = accountRepository.save(new Account(null, "311140415" + padded, "M2U SAVERS"));
         }
 
+        /**
+         * Load dummy transaction and associate with account
+         */
         Transaction transaction1 = transactionRepository.save(new Transaction(null, "2019-01-01 13:01", 110.80, accnt1.getId()));
-        Transaction transaction2 = transactionRepository.save(new Transaction(null, "2019-01-02 14:01", -201.00   ,  accnt2.getId()));
+        Transaction transaction2 = transactionRepository.save(new Transaction(null, "2019-01-02 14:01", -201.00, accnt2.getId()));
 
+        /**
+         * Load dummy remark and associate transaction and account
+         */
         remarkRepository.save(new Remark(null, "CDM DEPOSIT", transaction1.getId(), accnt1.getId()));
-        remarkRepository.save(new Remark(null, "ATM WITHDRAWAL",         transaction2.getId(), accnt2.getId()));
-        remarkRepository.save(new Remark(null,  "SERVICE CHG RM 1.00",    transaction2.getId(), accnt2.getId()));
+        remarkRepository.save(new Remark(null, "ATM WITHDRAWAL", transaction2.getId(), accnt2.getId()));
+        remarkRepository.save(new Remark(null, "SERVICE CHG RM 1.00", transaction2.getId(), accnt2.getId()));
 
     }
 }

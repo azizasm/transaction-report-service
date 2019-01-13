@@ -1,0 +1,13 @@
+# run tensorflow from dockers -  play-with-docker.com
+
+# to run : http://play-with-docker.com/?stack=https://raw.githubusercontent.com/azizasm/transaction-report-service/master/docker-compose.yml
+version: '3.1'
+services:
+  trs:
+    restart: always
+    image: azizasm/image-trs:part1
+    ports:
+      - 8888:8888
+volumes:
+  logvolume01: {}
+  sitevolume: {}

@@ -1,0 +1,66 @@
+type Query {
+    transactions: [Transaction]
+    accounts: [Account]
+    remarks: [Remark]
+    transaction(id: Int!): Transaction
+     allLinks( skip: Int = 0, first: Int = 0): [Account]
+}
+
+type Mutation {
+    createTransaction(input: CreateTransactionInput!): Transaction!
+    updateTransaction(input: UpdateTransactionInput!): Transaction!
+    deleteTransaction(id: Int!): Int!
+    createAccount(input: CreateAccountInput!): Account!
+    updateAccount(input: UpdateAccountInput!): Account!
+    deleteAccount(id: Int!): Int!
+    createRemark(input: CreateRemarkInput!): Remark!
+    deleteRemark(id: Int!): Int!
+}
+
+type Transaction {
+    id: Int!
+    trxdate: String!
+    amount: Float!
+    accnt: Account!
+    remarks: [Remark]
+}
+
+type Account {
+    id: Int!
+    accountnum: String!
+    acctype: String
+}
+
+type Remark {
+    id: Int!
+    text: String!
+    accnt: Account!
+}
+
+input CreateTransactionInput {
+    trxdate: String!
+    amount: Float!
+    accntId: Int!
+}
+
+input UpdateTransactionInput {
+    id: Int!
+    trxdate: String!
+    amount: Float!
+}
+
+input CreateAccountInput {
+    accountnum: String!
+    acctype: String
+}
+
+input UpdateAccountInput {
+    id: Int!
+    acctype: String
+}
+
+input CreateRemarkInput {
+    text: String!
+    accntId: Int!
+    transactionId: Int!
+}

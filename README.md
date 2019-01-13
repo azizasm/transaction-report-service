@@ -15,7 +15,7 @@ User name/pass : user/pass
 
 
 
-```json
+```
 
 query AllAccounts {
   accounts {

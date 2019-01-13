@@ -9,14 +9,14 @@
 
 
 ###### Repository and Utility
-![](Repository-Util.svg?raw=true)
+![](Repository-Util.svg)
 
 
 ###### GraphQL and Repository
-![](GraphQL-Repository.svg?raw=true)
+![](GraphQL-Repository.svg)
 
 
 ## Sequence Diagram
 
 ###### Transaction Report Inquiry Service
-![](Sequence-Diagram.svg?raw=true)
+![](Sequence-Diagram.svg)

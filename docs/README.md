@@ -1,5 +1,10 @@
 
-# Class  Diagram and sequence diagram for Transaction Report Inquiry Services
+# UML diagram for Transaction Report Inquiry Services
+
+## Sequence Diagram
+
+###### Transaction Report Inquiry Service
+![](Sequence-Diagram.svg)
 
 
 ## Class Diagram
@@ -16,7 +21,3 @@
 ![](GraphQL-Repository.svg)
 
 
-## Sequence Diagram
-
-###### Transaction Report Inquiry Service
-![](Sequence-Diagram.svg)
